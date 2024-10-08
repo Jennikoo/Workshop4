@@ -56,8 +56,17 @@ document.getElementById("carSelection").onchange = function() {
 
     // Update the image source based on the selected car
     const carImage = document.getElementById("carimage");
-    carImage.src = "images/" + selectedValue + ".jpg"; // Images should be in the images folder
+
+    // Assign appropriate image URLs based on the selected option
+    if (selectedValue === "car1") {
+        carImage.src = "https://images.unsplash.com/photo-1718637169593-766ec5a4f776?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fHBvcmNoZXxlbnwwfHwwfHx8MA%3D%3D";
+    } else if (selectedValue === "car2") {
+        carImage.src = "https://images.unsplash.com/photo-1531850959096-cfbb6f26c5a8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+    } else if (selectedValue === "car3") {
+        carImage.src = "https://images.unsplash.com/photo-1536922645426-5d658ab49b81?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+    }
 };
+
 
 // Add a red border when hovering over the image
 document.getElementById("carimage").onmouseover = function() {
@@ -83,7 +92,7 @@ function doMove() {
     let position = 0;
     let direction = 1; // 1 for moving right, -1 for moving left
 
-    // Set initial position and style
+// Set initial position and style
     img.style.position = "relative"; // Ensure relative positioning for animation
     img.style.left = "0px"; // Start from the original position
 
